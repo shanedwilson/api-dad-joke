@@ -16,7 +16,7 @@ const dadJokeAPI = () => {
    
 };
 
-const getAJoke = () => {
+$('button').on('click', (e) => {
     dadJokeAPI()
         .then(joke => {
             $('#joke').html(`<p>${joke.joke}</p>`)
@@ -24,8 +24,4 @@ const getAJoke = () => {
         .catch(error => {
             console.error(error);
         })
-}
-
-$('button').on('click', (e) => {
-    getAJoke();
-});
+})
